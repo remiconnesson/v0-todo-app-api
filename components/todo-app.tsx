@@ -6,6 +6,7 @@ import { Trash2, Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
 type Todo = {
@@ -66,11 +67,14 @@ export function TodoApp() {
 
   return (
     <div className="w-full max-w-lg">
-      <header className="mb-6">
-        <h1 className="text-2xl font-semibold tracking-tight text-balance">Todos</h1>
-        <p className="text-sm text-muted-foreground">
-          {remaining} {remaining === 1 ? "task" : "tasks"} left
-        </p>
+      <header className="mb-6 flex items-start justify-between gap-2">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight text-balance">Todos</h1>
+          <p className="text-sm text-muted-foreground">
+            {remaining} {remaining === 1 ? "task" : "tasks"} left
+          </p>
+        </div>
+        <ThemeToggle />
       </header>
 
       <form onSubmit={addTodo} className="mb-6 flex items-center gap-2">
